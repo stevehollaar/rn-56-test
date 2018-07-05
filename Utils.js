@@ -1,4 +1,4 @@
-export default Utils = {
+export default {
   PROCESS_JSON_ERROR_MSG: 'processJson failed',
 
   processJson(text: string) {
