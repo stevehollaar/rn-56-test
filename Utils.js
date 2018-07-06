@@ -1,3 +1,5 @@
+import isMocked from './isMocked';
+
 export default {
   PROCESS_JSON_ERROR_MSG: 'processJson failed',
 
@@ -8,6 +10,10 @@ export default {
       json = JSON.parse(text);
     } catch (e) {
       returnText = this.PROCESS_JSON_ERROR_MSG;
+    }
+
+    if (!isMocked()) {
+      throw new Error('not mocked');
     }
     returnText =
       json && json.formatString ? json.formatString : this.PROCESS_JSON_ERROR_MSG;

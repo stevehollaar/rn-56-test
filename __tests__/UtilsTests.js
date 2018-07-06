@@ -1,4 +1,5 @@
 import Utils from '../Utils';
+jest.mock('../isMocked', () => () => true);
 
 describe('UtilsTest', () => {
   it('processJson with 0 parameters', () => {
